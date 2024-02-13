@@ -1,0 +1,374 @@
+body {
+  margin: 0;
+  background-color: rgb(26, 36, 63);
+  color: white;
+}
+
+#app {
+  width: 100%;
+  height: 100%;
+}
+
+.main-box {
+  display: flex;
+  margin: auto;
+  flex-direction: column;
+}
+
+.text-btn:hover {
+  cursor: pointer;
+}
+/*MainHeader*/
+.header-box {
+  width: 100%;
+  height: 10vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.header-title {
+  font-family: 'Black Han Sans', sans-serif;
+  font-size: 2rem;
+  margin-right: 2rem;
+}
+
+.header-first {
+  width: 100%;
+  height: 66%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.header-nav {
+  border: 1px solid rgb(42, 57, 99);
+  width: 100%;
+  height: 33%;
+  display: flex;
+  justify-content: center;
+}
+
+.nav-btn {
+  width: 150px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.nav-btn:hover {
+  background-color: rgb(42, 57, 99);
+}
+
+.sizing {
+  width: 50%;
+  min-width: 316px;
+  height: 60%;
+  border: 1px solid rgb(251, 250, 252);
+  background-color: rgb(44, 45, 58);
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.input-box {
+  background-color: rgb(44, 45, 58);
+  margin-left: 5px;
+  width: 90%;
+  height: 90%;
+  border: none;
+  font-size: 1rem;
+  color: white;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  box-shadow: 0 0 0px 1000px rgb(122, 124, 124) inset;
+  -webkit-text-fill-color: white;
+  transition: background-color 5000s ease-in-out 0s;
+}
+input::placeholder {
+  color: white;
+}
+input:focus {
+  outline: none;
+}
+
+.svg-box {
+  width: 5%;
+  height: 90%;
+}
+
+.search {
+  background: no-repeat center url('Images/search.svg');
+}
+
+.header-icon {
+  margin-left: 0.5rem;
+}
+/*MainBody*/
+
+.body-box {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+.body-left {
+  width: 30vw;
+}
+
+.body-right {
+  width: 30vw;
+}
+.body-center {
+  width: 40vw;
+  position: relative;
+}
+.video-bg {
+  width: 100%;
+}
+#video {
+  width: 100%;
+  height: 400px;
+}
+
+/*CharBody.vue*/
+.char-box {
+  margin-top: 1rem;
+  display: flex;
+  width: 100vw;
+  height: 90vh;
+}
+
+/*charleft.vue*/
+
+.char-left {
+  width: 636px;
+  height: 100%;
+  margin-right: 1rem;
+  margin-left: 1rem;
+}
+
+.profile-wrap {
+  display: flex;
+  width: 100%;
+  height: 40%;
+  width: 636px;
+  border: 1px solid rgb(42, 57, 99);
+}
+
+.char-img {
+  width: 53%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+}
+
+.profile-text {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: flex-start;
+  font-size: 1rem;
+}
+
+.profile-list {
+  width: 70px;
+  border: 1px solid rgb(42, 57, 99);
+  background-color: rgb(42, 57, 99);
+  border-radius: 1rem;
+  margin-left: 0.3rem;
+  margin-right: 0.3rem;
+}
+
+.profile-mg {
+  text-align: center;
+}
+
+.profile-box {
+  display: flex;
+}
+
+/*charBody*/
+.char-main {
+  border: 1px solid rgb(42, 57, 99);
+  width: 70%;
+  height: 100%;
+}
+
+.equip-nav {
+  margin: 0.5rem;
+  width: 99%;
+  height: 30px;
+  display: flex;
+  justify-content: space-around;
+  background-color: rgba(42, 57, 99, 0.7);
+  border-radius: 0.5rem;
+  align-items: center;
+}
+
+.eq-nav-btn {
+  width: 100px;
+  text-align: center;
+}
+
+.equip-wrap {
+  width: 99%;
+  height: 650px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  border: rgb(42, 57, 99) 1px solid;
+  border-radius: 0.5rem;
+  margin: 0.5rem;
+}
+
+.item-tag {
+  background-color: rgba(42, 57, 99, 0.7);
+  border-radius: 0.5rem;
+  display: inline-block;
+  margin: 0.2rem;
+}
+
+.item-size {
+  width: 50%;
+  min-width: 525px;
+  height: 84px;
+  margin: 0.25rem 0.5rem;
+  display: flex;
+}
+
+.item-bg {
+  width: 80px;
+  height: 80px;
+}
+
+.item-bgc {
+  background: linear-gradient(135deg, #3d3325, #dcc999);
+  border: 1px solid white;
+}
+
+.item-img {
+  width: 80px;
+  height: 80px;
+  display: block;
+  background-size: cover;
+  background-position: center;
+}
+
+.engraving-img {
+  width: 80px;
+  height: 80px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 2rem;
+}
+
+.engraving-size {
+  width: 50%;
+  display: flex;
+}
+
+.engraving-text {
+  margin-left: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.item-grade {
+  display: flex;
+}
+.go-dae {
+  color: #e3c7a1;
+}
+
+.item-set {
+  font-size: 1rem;
+}
+
+.item-pakage {
+  margin-left: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.total-tsc {
+  display: flex;
+}
+
+.item-tsc-img {
+  background: no-repeat center
+    url('https://cdn-lostark.game.onstove.com/2018/obt/assets/images/common/game/ico_tooltip_transcendence.png');
+  width: 21px;
+  height: 21px;
+}
+
+/*itemset color*/
+
+.AM {
+  color: #b978ee;
+}
+
+.HG {
+  color: #8478ee;
+}
+
+.GM {
+  color: #dcc999;
+}
+
+.GW {
+  color: #fff;
+}
+
+.SM {
+  color: #f76b6b;
+}
+
+.BS {
+  color: #83e480;
+}
+
+.JB {
+  color: #6ddef1;
+}
+
+.PG {
+  color: #1f1c1c;
+}
+
+.MH {
+  color: #cf54b5;
+}
+
+/*EngravingColor*/
+
+.PE {
+  color: #ffffff;
+}
+
+.JE {
+  color: #f4f76b;
+}
+
+/*상급재련*/
+
+.HE {
+  margin-left: 0.3rem;
+  color: #ffd200;
+}
+
+/*초월*/
+
+.TSC {
+  color: #ff9632;
+}
