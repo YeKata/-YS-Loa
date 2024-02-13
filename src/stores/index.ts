@@ -16,7 +16,8 @@ export const useCharStore = defineStore('char', () => {
   const TotalTranscendence = ref() // 초월수치 총합
   const HighEnforce: string[] = reactive([]) // 상급재련 수치
   const AccessoriesStat: string[] = reactive([]) // 악세사리 특성
-  const BraceletStat: string[] = reactive([])
+  const BraceletStat: string[] = reactive([]) // 팔찌 스탯
+  const Stone: string[] = reactive([]) //어빌리티 스톤
 
   const addArmory = (data: ArmoryProfile) => {
     Armory.push(data)
@@ -32,6 +33,7 @@ export const useCharStore = defineStore('char', () => {
     setHighEnforce(data)
     setAccessoriesStat(data)
     setbraceletStat(data)
+    setStone(data)
   }
 
   const addEngraving = (Effect: EngravingEffect[], Engraving: Engraving[]) => {
@@ -57,6 +59,7 @@ export const useCharStore = defineStore('char', () => {
   }
 
   const setAccessoriesStat = (data: Equipment[]) => {
+    console.log(data)
     for (let i = 6; i < 11; i++) {
       const tool = JSON.parse(data[i]['Tooltip'])
       const txt = tool['Element_005']['value']['Element_001']
@@ -104,6 +107,20 @@ export const useCharStore = defineStore('char', () => {
         }
       }
     }
+  }
+
+  const setStone = (data: Equipment[]) => {
+    const tool = JSON.parse(data[11]['Tooltip'])
+    const st =
+      tool['Element_006']['value']['Element_000']['contentStr']['Element_000']['contentStr']
+    Stone.push(st.replace(']', '').replace('[', '').replace('활성도', ''))
+    const st1 =
+      tool['Element_006']['value']['Element_000']['contentStr']['Element_001']['contentStr']
+    Stone.push(st1.replace(']', '').replace('[', '').replace('활성도', ''))
+    const st2 =
+      tool['Element_006']['value']['Element_000']['contentStr']['Element_002']['contentStr']
+    Stone.push(st2.replace(']', '').replace('[', '').replace('활성도', ''))
+    console.log(Stone)
   }
 
   const setEquipEnforce = (data: Equipment[]) => {
@@ -227,6 +244,7 @@ export const useCharStore = defineStore('char', () => {
     deleteEn()
     deleteAccessorie()
     deleteTranscendence()
+    deleteStone()
   }
 
   const deleteArmory = () => {
@@ -250,6 +268,9 @@ export const useCharStore = defineStore('char', () => {
   const deleteTranscendence = () => {
     Transcendence.splice(0)
   }
+  const deleteStone = () => {
+    Stone.splice(0)
+  }
   return {
     Armory,
     Equipment,
@@ -257,6 +278,7 @@ export const useCharStore = defineStore('char', () => {
     Effects,
     Engravings,
     EngravingsColor,
+    Stone,
     EnPoint,
     Transcendence,
     TotalTranscendence,

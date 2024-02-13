@@ -312,6 +312,10 @@ input:focus {
   height: 21px;
 }
 
+.stone-tag {
+  display: flex;
+  justify-content: space-between;
+}
 /*itemset color*/
 
 .AM {

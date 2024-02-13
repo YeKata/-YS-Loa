@@ -65,6 +65,9 @@
             <div class="item-tag">{{ store.Equipment[stone].Type.substring(4) }}</div>
           </div>
         </div>
+        <div class="item-pakage">
+          <div class="stone-tag" v-for="(i, a) in store.Stone" :key="a" v-html="i"></div>
+        </div>
       </div>
     </div>
   </div>
