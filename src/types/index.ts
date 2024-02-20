@@ -56,3 +56,25 @@ export interface EngravingEffect {
   Name: string
   Description: string
 }
+
+export interface GemEffect {
+  GemSlot: number
+  Name: string
+  Description: string
+  Icon: string
+  Tooltip: string
+}
+
+export interface Gem {
+  Slot: number
+  Name: string
+  Icon: string
+  Level: number
+  Grade: string
+  Tooltip: string
+}
+
+export interface ArmoryGem {
+  Effects: GemEffect[]
+  Gems: Gem[]
+}

@@ -58,6 +58,9 @@ const toDetail = async () => {
       store.addArmory(data.ArmoryProfile)
       store.addEquipment(data.ArmoryEquipment)
       store.addEngraving(data.ArmoryEngraving['Effects'], data.ArmoryEngraving['Engravings'])
+      if (data.ArmoryGem) {
+        store.addGem(data.ArmoryGem)
+      }
       router.push({
         name: 'char',
         params: { name: name.value }

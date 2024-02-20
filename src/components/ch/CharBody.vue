@@ -3,14 +3,14 @@
     <CharNav />
     <div class="equip-wrap">
       <div class="item-size" v-for="i in items" :key="i">
-        <div class="item-bg item-bgc">
+        <div class="item-bg" :class="store.EquipClass[i]">
           <div class="item-img" :style="{ backgroundImage: `url(${store.Equipment[i].Icon}) ` }">
             <div class="item-tag">{{ store.Equipment[i].Type }}</div>
           </div>
         </div>
         <div class="item-pakage">
           <div class="item-grade">
-            <span class="go-dae">{{ store.EquipEnforce[i] }}</span>
+            <span :class="store.EquipClass[i] + '-text'">{{ store.EquipEnforce[i] }}</span>
             <span class="HE" v-if="store.HighEnforce[i] != '0'"> +{{ store.HighEnforce[i] }} </span>
           </div>
           <div class="item-set">
@@ -25,6 +25,7 @@
           </div>
         </div>
       </div>
+
       <div class="item-size">
         <div class="engraving-size" v-for="(item, i) in store.Engravings" :key="i">
           <div
@@ -39,34 +40,62 @@
           </div>
         </div>
       </div>
-      <div class="item-size" v-for="(i, a) in accessories" :key="i">
-        <div class="item-bg item-bgc">
-          <div class="item-img" :style="{ backgroundImage: `url(${store.Equipment[i].Icon}) ` }">
-            <div class="item-tag">{{ store.Equipment[i].Type }}</div>
+
+      <div class="item-size" v-for="(i, a) in store.Accessories" :key="a">
+        <div class="item-bg" :class="store.AccessoriesClass[a]">
+          <div class="item-img" :style="{ backgroundImage: `url(${i.Icon}) ` }">
+            <div class="item-tag">{{ i.Type }}</div>
           </div>
         </div>
         <div class="item-pakage">
-          <div class="go-dae">
-            {{ store.Equipment[i].Grade }}
+          <div :class="store.AccessoriesClass[a] + '-text'">
+            {{ i.Grade }}
           </div>
-          <div v-if="i != 12" v-html="store.AccessoriesStat[a]"></div>
-          <div v-else v-for="(i, a) in store.BraceletStat" :key="a">
+          <div v-html="store.AccessoriesStat[a]"></div>
+        </div>
+        <div></div>
+      </div>
+
+      <div class="item-size" v-for="(i, a) in store.Bracelet" :key="a">
+        <div class="item-bg" :class="store.BraceletClass">
+          <div class="item-img" :style="{ backgroundImage: `url(${i.Icon}) ` }">
+            <div class="item-tag">{{ i.Type }}</div>
+          </div>
+        </div>
+        <div class="item-pakage">
+          <div :class="store.BraceletClass + '-text'">
+            {{ i.Grade }}
+          </div>
+          <div v-for="(i, a) in store.BraceletStat" :key="a">
             {{ i }}
           </div>
           <div></div>
         </div>
       </div>
+
       <div class="item-size">
-        <div class="item-bg item-bgc">
+        <div class="item-bg" :class="store.StoneClass">
           <div
             class="item-img"
-            :style="{ backgroundImage: `url(${store.Equipment[stone].Icon}) ` }"
+            v-if="store.StoneNum != undefined"
+            :style="{ backgroundImage: `url(${store.Equipments[store.StoneNum].Icon}) ` }"
           >
-            <div class="item-tag">{{ store.Equipment[stone].Type.substring(4) }}</div>
+            <div class="item-tag">{{ store.Equipments[store.StoneNum].Type.substring(4) }}</div>
+          </div>
+          <div class="item-img" v-else>
+            <div class="item-tag">x</div>
           </div>
         </div>
         <div class="item-pakage">
           <div class="stone-tag" v-for="(i, a) in store.Stone" :key="a" v-html="i"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="gem-wrap">
+      <div class="gem-box" :class="store.GemsClass[a]" v-for="(i, a) in store.Gems" :key="a">
+        <div class="gem-img" :style="{ backgroundImage: `url(${i.Icon}) ` }">
+          <div class="gem-lv">{{ i.Level }}</div>
         </div>
       </div>
     </div>
@@ -79,8 +108,6 @@ import CharNav from './CharNav.vue'
 
 const store = useCharStore()
 const items = [1, 5, 2, 3, 4, 0]
-const accessories = [6, 7, 8, 9, 10, 12]
-const stone = 11
 </script>
 
 <style scoped></style>
