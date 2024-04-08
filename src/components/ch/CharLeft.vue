@@ -1,7 +1,7 @@
 <template>
   <div class="char-left">
     <div class="profile-wrap">
-      <div class="profile-text">
+      <div class="profile-text all-text-size">
         <div class="profile-box">
           <div class="profile-list profile-mg">서버</div>
           <div class="profile-value profile-mg">{{ store.Armory[0].ServerName }}</div>
@@ -54,6 +54,16 @@
         class="char-img"
         :style="{ backgroundImage: `url(${store.Armory[0].CharacterImage}) ` }"
       ></div>
+    </div>
+    <div class="collectibles-wrap">
+      <div class="collectibles-title">수집현황</div>
+      <div class="collectibles-Icon-wrap">
+        <div class="collectibles-Icon-box" v-for="(i, a) in store.Collectibles" :key="a">
+          <div class="collectibles-Icon" :style="{ backgroundImage: `url(${i.Icon}) ` }" />
+          <div class="collectibles-Name all-text-size">{{ store.ColletiblesName[a] }}</div>
+          <div class="colletibles-point all-text-size">{{ i.Point }}</div>
+        </div>
+      </div>
     </div>
   </div>
 </template>

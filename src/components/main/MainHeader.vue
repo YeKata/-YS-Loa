@@ -55,12 +55,19 @@ const toDetail = async () => {
       if (store.Armory) {
         store.deleteAll()
       }
+      console.log(data)
       store.addArmory(data.ArmoryProfile)
       store.addEquipment(data.ArmoryEquipment)
       store.addEngraving(data.ArmoryEngraving['Effects'], data.ArmoryEngraving['Engravings'])
+      store.addCollectible(data.Collectibles)
+      store.addSkill(data.ArmorySkills)
       if (data.ArmoryGem) {
         store.addGem(data.ArmoryGem)
       }
+      if (data.ArmoryCard) {
+        store.addCard(data.ArmoryCard)
+      }
+
       router.push({
         name: 'char',
         params: { name: name.value }

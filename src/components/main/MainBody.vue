@@ -10,6 +10,9 @@
           />
         </video>
       </div>
+      <div class="center-text">
+        <h2>검색해볼 내용이 없으면 '이다' 를 검색해보세요</h2>
+      </div>
     </div>
     <div class="body-right"></div>
   </div>

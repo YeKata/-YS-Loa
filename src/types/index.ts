@@ -78,3 +78,83 @@ export interface ArmoryGem {
   Effects: GemEffect[]
   Gems: Gem[]
 }
+
+export interface ArmoryCard {
+  Cards: Card[]
+  Effects: CardEffects
+}
+
+export interface Card {
+  Slot: number
+  Name: string
+  Icon: string
+  AwakeCount: number
+  AwakeTotal: number
+  Grade: string
+  Tooltip: string
+}
+
+export interface CardEffects {
+  index: number
+  CardSlots: [number]
+  items: CardEffect
+}
+
+export interface CardEffect {
+  Name: string
+  Description: string
+}
+
+export interface Stat {
+  Type: string
+  Value: string
+  Tooltip: [string]
+}
+
+export interface Tendencies {
+  Type: string
+  Point: number
+  MaxPoint: number
+}
+
+export interface Collectible {
+  Type: string
+  Icon: string
+  Point: number
+  MaxPoint: number
+  CollectiblePoints: CollectiblePoint
+}
+
+export interface CollectiblePoint {
+  PointName: string
+  Point: number
+  MaxPoint: number
+}
+
+export interface ArmorySkills {
+  Name: string
+  Icon: string
+  Level: number
+  Type: string
+  IsAwakening: boolean
+  Tripods: SkillTripod
+  Rune: SkillRune
+  Tooltip: string
+}
+
+export interface SkillTripod {
+  Tier: number
+  Slot: number
+  Name: string
+  Icon: string
+  Level: number
+  IsSelected: boolean
+  Tooltip: string
+}
+
+export interface SkillRune {
+  Name: string
+  Icon: string
+  Grade: string
+  Tooltip: string
+}
